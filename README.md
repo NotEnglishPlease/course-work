@@ -24,9 +24,3 @@ This app is built using the following technologies:
 
 ## Contributing
 This is a student project and thus not currently open to contributions. 
-
-## Credits
-This app was built by:
-* Aliev Isa
-* Povedenok Stanislav
-* Erdneeva Nadezhda
