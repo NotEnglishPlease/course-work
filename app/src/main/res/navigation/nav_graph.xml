@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allChatsFragment">
+
+    <fragment
+        android:id="@+id/globalFragment"
+        android:name="com.example.helloworldmessenger.fragments.GlobalFragment"
+        android:label="fragment_global"
+        tools:layout="@layout/fragment_global" >
+        <action
+            android:id="@+id/action_globalFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allChatsFragment"
+        android:name="com.example.helloworldmessenger.fragments.AllChatsFragment"
+        android:label="fragment_all_chats"
+        tools:layout="@layout/fragment_all_chats">
+        <action
+            android:id="@+id/action_allChatsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="com.example.helloworldmessenger.fragments.FriendsFragment"
+        android:label="fragment_friends"
+        tools:layout="@layout/fragment_friends">
+        <action
+            android:id="@+id/action_friendsFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.helloworldmessenger.fragments.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account">
+        <action
+            android:id="@+id/action_accountFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_myNoteFragment"
+            app:destination="@id/myNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.helloworldmessenger.fragments.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="conversationId"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.helloworldmessenger.fragments.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument android:name="profile_picture" />
+        <argument android:name="id" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <argument
+            android:name="is_online"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_newNoteFragment"
+            app:destination="@id/newNoteFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.helloworldmessenger.fragments.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/newNoteFragment"
+        android:name="com.example.helloworldmessenger.fragments.NewNoteFragment"
+        android:label="fragment_new_note"
+        tools:layout="@layout/fragment_new_note" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/myNoteFragment"
+        android:name="com.example.helloworldmessenger.fragments.MyNoteFragment"
+        android:label="fragment_my_note"
+        tools:layout="@layout/fragment_my_note" >
+        <action
+            android:id="@+id/action_myNoteFragment_to_newNoteFragment"
+            app:destination="@id/newNoteFragment" />
+    </fragment>
+</navigation>

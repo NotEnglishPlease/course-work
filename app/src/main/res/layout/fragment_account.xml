@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AccountFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/avatarImageView"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/loading_placeholder"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatarImageView" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/editAccountButton"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_profile"
+        app:icon="@drawable/outline_edit_24"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/notesButton"
+        app:layout_constraintEnd_toEndOf="@+id/notesButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/notesButton"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/notesButton"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/notes"
+        app:icon="@drawable/baseline_notes_24"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/logOutButton"
+        app:layout_constraintEnd_toEndOf="@+id/logOutButton"
+        app:layout_constraintStart_toStartOf="@+id/logOutButton"
+        app:layout_constraintTop_toBottomOf="@+id/editAccountButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logOutButton"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/log_out"
+        app:icon="@drawable/outline_exit_to_app_24"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/avatarImageView"
+        app:layout_constraintStart_toStartOf="@+id/avatarImageView"
+        app:layout_constraintTop_toBottomOf="@+id/notesButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

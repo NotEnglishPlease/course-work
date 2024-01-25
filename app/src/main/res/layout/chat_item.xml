@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/chatAvatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_account_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
+
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:text="@string/loading_placeholder"
+        app:layout_constraintEnd_toEndOf="@+id/lastMessageTime"
+        app:layout_constraintStart_toEndOf="@id/chatAvatar"
+        app:layout_constraintTop_toTopOf="@+id/chatAvatar" />
+
+    <TextView
+        android:id="@+id/lastMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/last_message_placeholder"
+        app:layout_constraintEnd_toStartOf="@+id/isReadIcon"
+        app:layout_constraintStart_toStartOf="@+id/usernameTextView"
+        app:layout_constraintTop_toBottomOf="@id/usernameTextView" />
+
+    <TextView
+        android:id="@+id/lastMessageTime"
+        style="@style/TextAppearance.Compat.Notification.Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/loading_placeholder"
+        app:layout_constraintBottom_toBottomOf="@id/lastMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lastMessage" />
+
+    <ImageView
+        android:id="@+id/isReadIcon"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/lastMessageTime"
+        app:layout_constraintEnd_toStartOf="@id/lastMessageTime"
+        app:layout_constraintTop_toTopOf="@id/lastMessageTime"
+        tools:src="@drawable/baseline_check_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

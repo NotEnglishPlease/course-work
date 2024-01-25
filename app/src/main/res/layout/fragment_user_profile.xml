@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3.CardView.Elevated"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".fragments.UserProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="296dp"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profilePictureImageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_account_circle_24"
+            app:layout_constraintEnd_toStartOf="@+id/usernameTextView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+        <TextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_medium"
+            android:maxLines="1"
+            android:text="@string/loading_placeholder"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toTopOf="@+id/statusTextView"
+            app:layout_constraintEnd_toStartOf="@+id/closeButton"
+            app:layout_constraintStart_toEndOf="@+id/profilePictureImageView"
+            app:layout_constraintTop_toTopOf="@+id/profilePictureImageView" />
+
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading_placeholder"
+            app:layout_constraintBottom_toBottomOf="@+id/profilePictureImageView"
+            app:layout_constraintStart_toStartOf="@+id/usernameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/usernameTextView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/closeButton"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:icon="@drawable/baseline_close_24"
+            app:layout_constraintBottom_toBottomOf="@+id/profilePictureImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profilePictureImageView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/writeMessageButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/write_a_message"
+            app:layout_constraintBottom_toTopOf="@+id/friendButton"
+            app:layout_constraintEnd_toEndOf="@+id/friendButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/friendButton"
+            app:layout_constraintTop_toBottomOf="@+id/profilePictureImageView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/friendButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_from_friends_list"
+            app:layout_constraintEnd_toEndOf="@+id/closeButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/profilePictureImageView"
+            app:layout_constraintTop_toBottomOf="@+id/writeMessageButton" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/noteButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/note"
+            app:layout_constraintEnd_toEndOf="@id/friendButton"
+            app:layout_constraintStart_toStartOf="@id/friendButton"
+            app:layout_constraintTop_toBottomOf="@id/friendButton" />
+
+        <!--        <com.google.android.material.button.MaterialButton-->
+        <!--            android:id="@+id/thirdButton"-->
+        <!--            style="@style/Widget.Material3.Button.OutlinedButton"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_marginBottom="20dp"-->
+        <!--            android:text="@string/ban_user"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/friendButton"-->
+        <!--            app:layout_constraintHorizontal_bias="0.5"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/friendButton"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/friendButton" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
